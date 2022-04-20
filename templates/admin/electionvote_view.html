@@ -1,0 +1,84 @@
+{% extends "blank.html" %}
+{% block body %}
+       <form method="post" action="/adm_view_result_post">
+
+    <table class="table table-striped" border="0">
+        <tr>
+            <th>Choose Post
+
+            </th>
+            <td><select name="select" class="form-control">
+                    {% for i in data %}
+                    <option value="{{ i['postid'] }}">{{ i['postname'] }}</option>
+                    {% endfor %}
+                
+            </select></td>
+                <td><input type="submit" value="submit" class="btn btn-dark btn-sm" />
+
+                    </td>
+{#                    <td>#}
+{#                #}
+{#                        </td>#}
+{#                        <td>#}
+{#                #}
+{#                            </td>#}
+{#                            <td>#}
+{#                #}
+{#                                </td>#}
+        </tr>
+        {% for i in data %}
+        <tr>
+{#                <td>{{ loop.index }}</td>#}
+{#                    <td>{{ i['postname'] }}</td>#}
+{#                        <td>{{ i['candidatename'] }}</td>#}
+{#                            <td>{{ i['dateandtime'] }}</td>#}
+{#                                <td><a href="/adm_edit_electionvote/{{ i['evid'] }}">edit</a>#}
+                
+{#                                    </td>#}
+{#                                    <td><a href="/adm_delete_electionvote/{{ i['evid'] }}">delete</a>#}
+                
+{#                                        </td>#}
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    <table class="table table-striped" border="0">
+        <tr>
+            <th>Sl no</th>
+            <th>Post ID</th>
+            <th>Candidate Name</th>
+            <th>Course</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Total Votes</th>
+            <th>Image</th>
+        </tr>
+         {% for i in data1 %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ i['postid'] }}</td>
+            <td>{{ i['stuname'] }}</td>
+            <td>{{ i['coursename'] }}</td>
+            <td>{{ i['email'] }}</td>
+            <td>{{ i['phoneno'] }}</td>
+            <td>{{ i['c'] }}</td>
+            <td><img src="{{ i['image'] }}" width="50" height="50"></td>
+
+
+        </tr>
+    {% endfor %}
+
+
+
+
+
+
+    </table>
+    </form>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_update_course" method="post">
+        <table class="table table-striped" border="0">
+            <tr><input type="hidden" name="courseid" value="{{ data['courseid'] }}" required/>
+                <td>Course Name
+
+                </td>
+                <td><input type="text" name="cname" value="{{data['coursename']}}" class="form-control" required/>
+
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    Department Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                    <option value="{{ data['depid'] }}">{{ data['depname'] }}</option>
+                    {% for i in data2 %}
+                    <option value="{{ i['depid'] }}">{{ i['depname'] }}</option>
+                    {% endfor %}</select>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Course Year
+
+            </td>
+            <td>
+                <input type="text" name="cyear" value="{{ data['cyear'] }}" class="form-control" required/>
+
+            </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <input type="submit" value="update" class="btn btn-dark btn-sm" required/>
+
+                </td>
+
+            </tr>
+
+
+        </table>
+
+
+    </form>
+{% endblock %}

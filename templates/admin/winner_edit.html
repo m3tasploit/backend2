@@ -1,0 +1,59 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_update_winner_post" method="post">
+        <table class="table table-striped" border="0">
+            <input type="hidden" name="winnerid" value="{{ data['winnerid'] }}"/>
+            <tr>
+                <td>Student Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                 <option value="{{ stuname['stuid'] }}">{{ stuname['stuname'] }}</option>
+                    {% for i in stt %}
+                    <option value="{{ i['stuid'] }}">{{ i['stuname'] }}</option>
+                    {% endfor %}
+                </select>
+
+                </td>
+            </tr>
+            <tr>
+                    <td>Post Name
+    
+                    </td>
+                    <td><select name="select1" class="form-control">
+                     <option value="{{ post['postid'] }}">{{ post['postname'] }}</option>
+                        {% for i in stt2 %}
+                        <option value="{{ i['postid'] }}">{{ i['postname'] }}</option>
+                        {% endfor %}
+                    </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                        <td>Year From
+        
+                        </td>
+                        <td><input type="number" name="yearfrom" value="{{ data['yearfrom'] }}" class="form-control" required/>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>Year To
+            
+                            </td>
+                            <td><input type="number" name="yearto" value="{{ data['yearto'] }}" class="form-control" required/>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                                <td>
+                
+                                </td>
+                                <td><input type="submit" value="update" class="btn btn-dark btn-sm" required/>
+                                    
+                                </td>
+                            </tr>
+        </table>
+    </form>
+    
+{% endblock %}

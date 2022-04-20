@@ -1,0 +1,26 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form method="post" action="/adm_add_dept_post">
+
+            <table class="table table-striped" >
+                <tr>
+                    <td>Department Name
+
+
+                    </td>
+                    <td>
+                <input type="text" name="deptname" class="form-control" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                 <input type="submit" value="save" class="btn btn-dark btn-sm" required/>
+                    </td>
+                </tr>
+            </table>
+
+    </form>
+{% endblock %}

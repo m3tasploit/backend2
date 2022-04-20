@@ -1,0 +1,37 @@
+{% extends "blank.html" %}
+{% block body %}
+    <table class="table table-light">
+        <tr>
+            <th>Sno
+
+            </th>
+            <th>Department Name
+
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+
+        </tr>
+        {% for i in data %}
+        <tr>
+                <td width="50px">{{ loop.index }}</td>
+                <td>{{ i['depname'] }}</td>
+                <td width="50px">
+                    <a href="/adm_edit_dept/{{ i['depid'] }}" class="btn btn-warning btn-sm">edit</a>
+    
+                </td>
+                <td width="50px">
+                    <a href="/adm_delete_dept/{{ i['depid'] }}" onclick="return confirm('Are you sure you want to Remove?');" class="btn btn-danger btn-sm">delete</a>
+    
+                </td>
+    
+            </tr>
+        {% endfor %}
+                
+
+    </table>
+{% endblock %}

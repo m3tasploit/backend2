@@ -1,0 +1,35 @@
+{% extends "blank.html" %}
+{% block body %}
+    <table class="table table-striped" border="0">
+        <tr>
+            <th>Post ID
+
+            </th>
+            <th>Post Name
+                
+                </th>
+                <th>
+                
+                    </th>
+                    <th>
+                
+                        </th>
+        </tr>
+        {% for i in data %}
+
+        <tr>
+
+                <td width="50px">{{ loop.index }}</td>
+                <td>{{ i['postname'] }}
+                
+                        </td>
+                        <td><a href="/adm_edit_post/{{ i['postid'] }} " class="btn btn-warning btn-sm">edit</a>
+                
+                            </td>
+                            <td><a href="/adm_delete_post/{{ i['postid'] }} "onclick="return confirm('Are you sure you want to Remove?');" class="btn btn-danger btn-sm">delete</a>
+                
+                                </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

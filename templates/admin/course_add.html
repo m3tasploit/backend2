@@ -1,0 +1,55 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form method="post" action="/adm_add_course_post">
+        <table class="table table-striped" border="0">
+            <tr>
+                <td>Course Name
+
+                </td>
+                <td><input type="text" name="cname" class="form-control" required/>
+
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    Department Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                    {% for i in data %}
+
+                    <option value="{{ i['depid'] }}">{{ i['depname'] }}</option>
+                    {% endfor %}
+                </select>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Course Year
+
+            </td>
+            <td>
+                <input type="text" name="cyear" class="form-control" required/>
+
+            </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <input type="submit" value="save" class="btn btn-dark btn-sm" required/>
+
+                </td>
+
+            </tr>
+
+
+        </table>
+
+
+    </form>
+{% endblock %}

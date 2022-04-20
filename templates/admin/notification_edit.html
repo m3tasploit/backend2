@@ -1,0 +1,41 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_update_notification_post" method="post">
+        <table  class="table table-striped" border="0">
+            <tr><input type="hidden" name="notid" value="{{ data['notid'] }}" required/>
+
+                <td>
+                    Notification Content
+
+                </td>
+                <td><textarea name="notcont" rows="15" cols="15">{{ data['notcontent'] }}</textarea>
+
+                </td>
+            </tr>
+            <tr>
+                    <td>Date
+    
+                    </td>
+                    <td><input type="date" name="notidate" value="{{ data['notdate'] }}" class="form-control" required/>
+                        
+                    </td>
+                </tr>
+                <tr>
+                        <td>Expairy Date
+        
+                        </td>
+                        <td><input type="date" name="expdate" value="{{ data['expirydate'] }}" class="form-control" required/>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+            
+                            </td>
+                            <td><input type="submit" value="update" class="btn btn-dark btn-sm" required/>
+                                
+                            </td>
+                        </tr>
+        </table>
+    </form>
+{% endblock %}

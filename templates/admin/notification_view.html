@@ -1,0 +1,42 @@
+{% extends "blank.html" %}
+{% block body %}
+    <table class="table table-striped" border="0">
+        <tr>
+            <th>Notification ID
+
+            </th>
+            <th>Content
+                
+                </th>
+                <th>Date
+                
+                    </th>
+                    <th>Expiry Date
+                
+                        </th>
+                        <th>
+                
+                            </th>
+            <th>
+            </th>
+
+        </tr>
+        {% for i in data %}
+        <tr>
+                <td width="50px">{{ loop.index }}</td>
+                    <td>{{ i['notcontent'] }}</td>
+                        <td>{{ i['notdate'] }}</td>
+                            <td>{{ i['expirydate'] }}</td>
+            <td><a href="/adm_edit_notfn/{{ i['notid'] }}" class="btn btn-warning btn-sm">edit</a></td>
+                
+                                </td>
+                                <td><a href="adm_delete_notification/{{ i["notid"] }}" onclick="return confirm('Are you sure you want to Remove?');" class="btn btn-danger btn-sm">delete</a>
+                
+                                    </td>
+
+        </tr>
+         {% endfor %}
+    </table>
+
+    
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_add_electionvote_post" method="post">
+        <table class="table table-striped" border="0">
+            <tr>
+                <td>Student Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                    {% for i in data %}
+                    <option value="{{ i['stuid'] }}">{{ i['stuname'] }}</option>
+                    {% endfor %}
+
+                </select>
+
+
+                </td>
+            </tr>
+            <tr>
+                    <td>Candidate Name
+    
+                    </td>
+                    <td><select name="select1" class="form-control">
+                        {% for i in data1 %}
+                        <option value="{{ i["candidateid"] }}">{{ i['stuname'] }}</option>
+                        {% endfor %}
+                    </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                        <td>Date And Time
+        
+                        </td>
+                        <td><input type="datetime" name="dateandtime" class="form-control" required/>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+            
+                            </td>
+                            <td><input type="submit" value="save" class="btn btn-dark btn-sm" required/>
+                                
+                            </td>
+                        </tr>
+        </table>
+    </form>
+    
+{% endblock %}

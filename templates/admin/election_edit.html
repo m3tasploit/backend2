@@ -1,0 +1,45 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_update_election_post" method="post">
+        <table class="table table-striped" border="0">
+            <input type="hidden" name="eleid" value="{{ data['eleid'] }}" required/>
+
+            <tr>
+                <td>Election Name
+
+                </td>
+                <td><input type="text" name="elname" value="{{ data['elename'] }}" class="form-control" required/>
+
+                </td>
+    
+    </tr>
+    <tr>
+            <td>Date and Time
+
+            </td>
+            <td><input type="datetime" name="datetime" value="{{ data['dateandtime'] }}" class="form-control" required/>
+
+            </td>
+
+</tr>
+<tr>
+        <td>Status
+
+        </td>
+        <td><input type="text" name="status" value="{{ data['status'] }}" class="form-control" required/>
+
+        </td>
+
+</tr>
+<tr>
+        <td>
+
+        </td>
+        <td><input type="submit" value="update" class="btn btn-dark btn-sm" class="form-control" required/>
+
+        </td>
+
+</tr>
+</table>
+    </form>
+{% endblock %}

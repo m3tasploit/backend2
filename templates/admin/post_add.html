@@ -1,0 +1,23 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form method="post" action="/adm_add_post_post">
+        <table class="table table-striped" border="0">
+            <tr>
+                <td>Post Name
+
+                </td>
+                <td><input type="text" name="postname" class="form-control" required/>
+
+                </td>
+            </tr>
+            <tr>
+                    <td>
+    
+                    </td>
+                    <td><input type="submit" value="save" class="btn btn-dark btn-sm" required/>
+                        
+                    </td>
+                </tr>
+        </table>
+    </form>
+{% endblock %}

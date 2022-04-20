@@ -1,0 +1,45 @@
+{% extends "blank.html" %}
+{% block body %}
+    <table class="table table-striped" border="0">
+        <tr>
+            <th>Winner ID
+
+            </th>
+            <th>Student Name
+                
+            </th>
+            <th>Post
+                
+            </th>
+            <th>Year From
+                
+            </th>
+            <th>Year To
+                
+             </th>
+             <th>
+                
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+        {% for i in data %}
+        <tr>
+                <td width="50px">{{ loop.index }}</td>
+                <td>{{ i['studentname'] }}</td>
+                <td>{{ i['postname'] }}</td>
+                <td>{{ i['yearfrom'] }}</td>
+                <td>{{ i['yearto'] }}</td>
+                <td><a href="/adm_edit_winner/{{ i['winnerid'] }}" class="btn btn-warning btn-sm">edit</a>
+                
+                 </td>
+                <td><a href="/adm_delete_winner/{{ i['winnerid'] }}" class="btn btn-danger btn-sm">delete</a>
+                
+                </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    
+{% endblock %}

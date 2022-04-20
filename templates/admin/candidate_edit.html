@@ -1,0 +1,80 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_update_candidate_post" method="post">
+        <table class="table table-striped" border="0">
+           <input type="hidden" name="cid" value="{{ candinfo['cid'] }}" required/>
+
+            <tr>
+
+                <td>Candidate Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                <option value="{{  candinfo["stuid"] }}">{{ candinfo["stuname"] }}</option>
+                    {% for i in st %}
+                    <option value="{{ i['stuid'] }}">{{ i['stuname'] }}</option>
+                    {% endfor %}
+
+                </select>
+
+                </td>
+            </tr>
+            <tr>
+                    <td>Support 1
+    
+                    </td>
+                    <td><select name="select1" class="form-control">
+                        <option value="{{ supprtone['stuid'] }}">{{ supprtone['stuname'] }}</option>
+                        {% for i in st1 %}
+                    <option value="{{ i['stuid'] }}">{{ i['stuname'] }}</option>
+                    {% endfor %}
+
+                    </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                        <td>Support 2
+        
+                        </td>
+                        <td><select name="select2" class="form-control">
+                            <option value="{{ supprttwo['stuid'] }}">{{ supprttwo['stuname'] }}</option>
+                                      {% for i in st2 %}
+                    <option value="{{ i['stuid'] }}">{{ i['stuname'] }}</option>
+                    {% endfor %}
+
+                        </select>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>Post Name
+            
+                            </td>
+                            <td><select name="select3" class="form-control">
+                                <option value="{{ post['postid'] }}">{{ post['postname'] }}</option>
+                                          {% for i in pst %}
+                    <option value="{{ i['postid'] }}">{{ i['postname'] }}</option>
+                    {% endfor %}
+
+                            </select>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                                <td>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                    <td>
+                    
+                                    </td>
+                                    <td><input type="submit" value="update" class="btn btn-dark btn-sm" required/>
+                                        
+                                    </td>
+                                </tr>
+                                
+        </table>
+    </form>
+{% endblock %}

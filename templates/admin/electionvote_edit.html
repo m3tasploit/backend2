@@ -1,0 +1,50 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_update_elevote_post" method="post">
+        <table class="table table-striped" border="0">
+              <input type="hidden" name="evid" value="{{ data['evid'] }}"/>
+            <tr>
+                <td>Student Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                    <option value="{{ stunm['stuid'] }}">{{ stunm['stuanme'] }}</option>
+                    {% for i in ct %}
+                    <option value="{{ i['stuid'] }}">{{ i['stuname'] }}</option>
+                    {% endfor %}
+                </select>
+
+                </td>
+            </tr>
+            <tr>
+                    <td>Candidate Name
+    
+                    </td>
+                    <td><select name="candi" class="form-control">
+                        <option value="{{ cnam['candidateid'] }}">{{ cnam['stuname'] }}</option>
+                        {% for i in ao %}
+                        <option value="{{ i['candidateid'] }}">{{ i['stuname'] }}</option>
+                        {% endfor %}
+                    </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                        <td>Date And Time
+        
+                        </td>
+                        <td><input type="datetime" name="dateandtime" value="{{ data['dateandtime'] }}" class="form-control" required/>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+            
+                            </td>
+                            <td><input type="submit" value="update" class="btn btn-dark btn-sm" required/>
+                                
+                            </td>
+                        </tr>
+        </table>
+    </form>
+{% endblock %}

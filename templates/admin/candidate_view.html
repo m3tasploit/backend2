@@ -1,0 +1,35 @@
+{% extends "blank.html" %}
+{% block body %}
+    <table class="table table-striped" border="0">
+        <tr>
+                <th>slno</th>
+                    <th>Candidate Name</th>
+                        <th>Support 1</th>
+                            <th>Support 2</th>
+                                <th>Post Name</th>
+                                            <td>
+                                                </td>
+                                                <td>
+                
+                                                </td>
+
+         </tr>
+        {% for i in data %}
+        <tr>
+            <td width="50px">{{ loop.index }}</td>
+            <td>{{  i['stuname'] }}</td>
+            <td>{{ i['supporter1'] }}</td>
+            <td>{{ i['supporter2'] }}</td>
+            <td>{{ i['postname'] }}</td>
+
+            <td><a href="/adm_edit_candidate/{{ i['cid'] }}" class="btn btn-warning btn-sm"><i>Edit</i></a>
+                
+            </td>
+            <td><a href="/adm_delete_candidate/{{ i['cid'] }}" onclick="return confirm('Are you sure you want to Remove?');" class="btn btn-danger btn-sm"><i>Delete</i></a>
+                
+             </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}

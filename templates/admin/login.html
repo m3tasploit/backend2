@@ -1,0 +1,22 @@
+{% extends "blank.html" %}
+{% block body %}
+<form action="/adm_login_post" method="post">
+
+    <table class="table table-striped" border="0">
+        <tr>
+            <td>Username</td>
+            <td><input type="text" name="uname" required/></td>
+        </tr>
+        <tr>
+                <td>Password</td>
+                <td><input type="password" name="pass" required/></td>
+            </tr>
+            <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login" class="btn btn-dark btn-sm"/></td>
+                </tr>
+    </table>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_update_student_post" method="post">
+        <table class="table table-striped" border="0">
+            <tr><input type="hidden" name="stuid" value="{{ data["stuid"] }}"/>
+                <td>Student Name
+
+                </td>
+                <td><input type="text" name="sname" value="{{ data["stuname"] }}"/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Admission Number
+
+                </td>
+                <td><input type="text" name="adnum" value="{{ data["admno"] }}"/>
+
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Course Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                    <option value="{{ data['cid'] }}">{{ data['coursename'] }}</option>
+                                {% for i in data1 %}
+                            <option value="{{ i['courseid'] }}">{{ i['coursename'] }}</option>
+                               {% endfor %}
+                </select>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Semester
+
+                </td>
+                <td><input type="text" name="sem" value="{{ data["semester"] }}"/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Gender
+
+                </td>
+                {% if data['gender']=="MALE" %}
+                <td><input type="radio"  name="gender" value="MALE" checked="checked"/>Male
+
+                
+            
+                    <input type="radio" name="gender" value="FEMALE"/>Female
+            
+            
+                    <input type="radio" name="gender" value="OTHER"/>Other
+                    {% endif %}
+
+             {% if data['gender']=="FEMALE" %}
+                <td><input type="radio" name="gender" value="MALE"/>male
+
+
+
+                    <input type="radio" name="gender" value="FEMALE" checked="checked"/>female
+
+
+                    <input type="radio" name="gender" value="OTHER"/>Other
+                    {% endif %}
+             {% if data['gender']=="OTHER" %}
+                <td><input type="radio" name="gender" value="MALE" />male
+
+
+
+                    <input type="radio" name="gender" value="FEMALE"/>Female
+
+
+                    <input type="radio" name="gender" value="OTHER" checked="checked"/>Other
+                    {% endif %}
+                </td>
+            
+
+            </tr>
+            <tr>
+                <td>Guardian
+
+                </td>
+                <td><input type="text" name="guaname" value="{{ data["guardian"] }}"/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Date Of Birth
+
+                </td>
+                <td><input type="date" name="dob" value="{{ data["dob"] }}"/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Phone No
+
+                </td>
+                <td><input type="number" name="phoneno" value="{{ data["phoneno"] }}" class="form-control" required/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Email
+
+                </td>
+                <td><input type="email" name="email" value="{{ data["email"] }}" class="form-control" required/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td><input type="submit" value="update" class="btn btn-dark btn-sm" required/>
+
+                </td>
+
+
+            </tr>
+        </table>
+    </form>
+{% endblock %}

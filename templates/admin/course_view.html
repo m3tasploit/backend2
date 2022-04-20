@@ -1,0 +1,39 @@
+{% extends "blank.html" %}
+{% block body %}
+    <table class="table table-striped" border="0">
+        <tr>
+            <th>Course ID</th>
+
+           <th>Course Name
+
+            </th>
+            <th>Department
+
+                </th>
+                <th>Course Year
+
+                    </th>
+                    <td>
+
+                        </td>
+                        <td>
+
+                            </td>
+
+        </tr>{% for i in data %}
+        <tr>
+            <td width="50px">{{ loop.index }}</td>
+
+            <td>{{ i['coursename']}}</td>
+                <td>{{ i['depname'] }}</td>
+                    <td>{{ i['cyear'] }}</td>
+                        <td><a href="/adm_edit_course/{{ i['courseid'] }}" class="btn btn-warning btn-sm">edit</a>
+
+                            </td>
+                            <td><a href="/adm_delete_course/{{ i['courseid']}}" onclick="return confirm('Are you sure you want to Remove?');" class="btn btn-danger btn-sm">delete</a>
+                            </td>
+                            </tr>
+                             {% endfor %}
+    </table>
+
+{% endblock %}

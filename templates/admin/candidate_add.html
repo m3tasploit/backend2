@@ -1,0 +1,72 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_add_candidate_post" method="post">
+        <table class="table table-striped" border="0">
+            <tr>
+                <td>Candidate Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                    {% for i in data %}
+                    <option value="{{ i['stuid'] }}">{{ i['stuname'] }}</option>
+                    {% endfor %}
+                </select>
+
+                </td>
+            </tr>
+            <tr>
+                    <td>Support 1
+    
+                    </td>
+                    <td><select name="select1" class="form-control">
+                         {% for j in data %}
+                    <option value="{{ j['stuid'] }}">{{ j['stuname'] }}</option>
+                    {% endfor %}
+                    </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                        <td>Support 2
+        
+                        </td>
+                        <td><select name="select2" class="form-control">
+                                {% for k in data %}
+                    <option value="{{ k['stuid'] }}">{{ k['stuname'] }}</option>
+                    {% endfor %}
+                        </select>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>Post Name
+            
+                            </td>
+                            <td><select name="pst" class="form-control">
+                                {% for m in data2 %}
+                                <option value="{{ m['postid'] }}">{{ m['postname'] }}
+                                </option>
+                                {% endfor %}
+
+
+                            </select>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                                <td>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                    <td>
+                    
+                                    </td>
+                                    <td><input type="submit" value="save" class="btn btn-dark btn-sm" required/>
+                                        
+                                    </td>
+                                </tr>
+                                
+        </table>
+    </form>
+{% endblock %}

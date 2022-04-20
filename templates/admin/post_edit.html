@@ -1,0 +1,24 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_update_post_post" method="post">
+        <table class="table table-striped" border="0">
+            <input type="hidden" name="idd" value=" {{ data['postid'] }}" required/>
+            <tr>
+                <td>Post Name
+
+                </td>
+                <td><input type="text" name="postname" value=" {{ data['postname'] }}" class="form-control" required/>
+
+                </td>
+            </tr>
+            <tr>
+                    <td>
+    
+                    </td>
+                    <td><input type="submit" value="update" class="btn btn-dark btn-sm" class="form-control" required/>
+                        
+                    </td>
+                </tr>
+        </table>
+    </form>
+{% endblock %}

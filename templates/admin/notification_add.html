@@ -1,0 +1,42 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form method="post" action="/adm_add_notification_post">
+        <table class="table table-striped" border="0">
+            <tr>
+                <td>
+                    Notification Content
+
+                </td>
+                <td><textarea name="notcon">
+
+                </textarea>
+
+                </td>
+            </tr>
+            <tr>
+                    <td>Date
+    
+                    </td>
+                    <td><input type="date" name="notidate" class="form-control" required/>
+                        
+                    </td>
+                </tr>
+                <tr>
+                        <td>Expairy Date
+        
+                        </td>
+                        <td><input type="date" name="expdate" class="form-control" required/>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+            
+                            </td>
+                            <td><input type="submit" value="save" class="btn btn-dark btn-sm" required/>
+                                
+                            </td>
+                        </tr>
+        </table>
+    </form>
+{% endblock %}

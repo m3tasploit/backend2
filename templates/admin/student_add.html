@@ -1,0 +1,120 @@
+{% extends "blank.html" %}
+{% block body %}
+    <form action="/adm_add_student_post" method="post" enctype="multipart/form-data">
+        <table class="table table-striped" border="0">
+            <tr>
+                <td>Student Name
+
+                </td>
+                <td><input type="text" name="sname" class="form-control" required/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Admission Number
+
+                </td>
+                <td><input type="text" name="adnum" class="form-control" required/>
+
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Course Name
+
+                </td>
+                <td><select name="select" class="form-control">
+                <option value="select">--select--</option>
+                    {% for i in data %}
+                    <option value="{{ i['courseid']}}">{{ i['coursename'] }}</option>
+                    {% endfor %}
+                </select>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Semester
+
+                </td>
+                <td><input type="text" name="sem" class="form-control" required/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Gender
+
+                </td>
+                <td><input type="radio" name="gender" value="MALE" class="checkbox"  />Male
+
+                
+            
+                    <input type="radio" name="gender" value="FEMALE" class="checkbox"/>Female
+            
+            
+                    <input type="radio" name="gender" value="OTHER" class="checkbox"/>Other
+                </td>
+            
+
+            </tr>
+            <tr>
+                <td>Guardian
+
+                </td>
+                <td><input type="text" name="guaname" class="form-control" required/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Date Of Birth
+
+                </td>
+                <td><input type="date" name="dob" class="form-control" required/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Phone No
+
+                </td>
+                <td><input type="number" name="phoneno" class="form-control" required/>
+
+                </td>
+
+            </tr>
+                  <tr>
+                <td>Image
+
+                </td>
+                <td><input type="file" name="fileupload" value="fileupload" id="fileupload">
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Email
+
+                </td>
+                <td><input type="email" name="email" class="form-control" required/>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td><input type="submit" value="save" class="btn btn-dark btn-sm" required/>
+
+                </td>
+
+
+            </tr>
+        </table>
+    </form>
+{% endblock %}
